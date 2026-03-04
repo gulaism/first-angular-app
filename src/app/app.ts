@@ -5,7 +5,6 @@ import { User } from "./user/user";
 import { DUMMY_USERS } from './dummy-users';
 import { Tasks } from "./tasks/tasks";
 
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Header, User, Tasks],
@@ -14,7 +13,7 @@ import { Tasks } from "./tasks/tasks";
 })
 export class App {
   users = DUMMY_USERS;
-  currentUser!: typeof DUMMY_USERS[0];
+  currentUser?: typeof DUMMY_USERS[0];
   
   onSelectUser(id: string) {
     console.log('Id is: '+ id);

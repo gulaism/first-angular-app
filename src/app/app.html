@@ -2,16 +2,16 @@
 
 <main>
   <ul id="users">
+    @for(user of users; track user.id) {
     <li>
-      <app-user (select)="onSelectUser($event)" [user]="users[0]" />
+      <app-user [selected]="user.id === currentUser?.id" (select)="onSelectUser($event)" [user]="user" />
     </li>
-    <li>
-      <app-user (select)="onSelectUser($event)" [user]="users[1]" />
-    </li>
-    <li>
-      <app-user (select)="onSelectUser($event)" [user]="users[2]" />
-    </li>
+    }
   </ul>
 
-  <app-tasks [user]="currentUser"/>
+  @if(currentUser) {
+  <app-tasks [userId]="currentUser.id" [user]="currentUser" />
+  } @else {
+  <p>So as to see the tasks, please select a user.</p>
+  }
 </main>
