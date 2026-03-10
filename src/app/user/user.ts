@@ -1,11 +1,12 @@
 import { Component, computed, EventEmitter, Input, input, Output, output } from '@angular/core';
 
-import { type UserObject } from './user.model'; // type definition
+import { type UserObject } from './user.model';
+import { Card } from "../shared/card/card"; // type definition
 
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [Card],
   templateUrl: './user.html',
   styleUrl: './user.scss',
 })
