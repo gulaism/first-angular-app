@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Header } from './header/header';
-import { User } from "./user/user";
 import { DUMMY_USERS } from './dummy-users';
-import { Tasks } from "./tasks/tasks";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, User, Tasks],
+  standalone: false,
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
